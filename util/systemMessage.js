@@ -43,7 +43,7 @@ type NavigateForward = { action: "navigate-forward", url: string }
 * if the question is something you know from your knowledge base, you go straight to answering.
 * however, if the question potentially requires knowledge exceeding your training data cutoff date or is outside the scope of your knowledge base, then base your answer off the web, starting with a url or google search
 # observe the screenshot, and think about the next action
-# *****For now, only use CLICK, VISIT-URL, GIVE UP, OR DONE as the others haven't been implemented
+# *****For now, refrain from using SCROLL, REMEMBER INFO FROM SITE, DISMISS DIALOGS, and NAVIGATE BACK / NAVIGATE FORWARD since they're unfinished
 
 # your output must always be in valid JSON format.
 *

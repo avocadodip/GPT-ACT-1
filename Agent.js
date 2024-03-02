@@ -2,14 +2,14 @@ const fs = require("fs");
 const puppeteer = require("puppeteer-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 const { systemMessage } = require("./util/systemMessage.js");
-const { image_to_base64 } = require("./util/util");
+const { image_to_base64 } = require("./util/util.js");
 const { default: OpenAI } = require("openai");
 puppeteer.use(StealthPlugin());
 const openai = new OpenAI();
 
 const TIMEOUT = 6000;
 
-class Jarvis {
+class Agent {
   constructor(openai) {
     this.openai = openai;
     this.page = null;
@@ -53,7 +53,10 @@ class Jarvis {
       waitUntil: "domcontentloaded",
       timeout: TIMEOUT,
     });
-    await Promise.race([this.waitForEvent(this.page, "load"), this.sleep(TIMEOUT)]);
+    await Promise.race([
+      this.waitForEvent(this.page, "load"),
+      this.sleep(TIMEOUT),
+    ]);
   }
 
   // Take screenshot of labeled page
