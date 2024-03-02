@@ -45,13 +45,13 @@ type NavigateForward = { action: "navigate-forward", url: string }
 # observe the screenshot, and think about the next action
 # *****For now, refrain from using SCROLL, REMEMBER INFO FROM SITE, DISMISS DIALOGS, and NAVIGATE BACK / NAVIGATE FORWARD since they're unfinished
 
-# your output must always be in valid JSON format.
+# your output must always be in valid JSON format. Do NOT respond in markdown
 *
 # for conducting searches, use a Google search format like 'https://google.com/search?q=search' whenever suitable.
 *
 * refrain from fabricating any URLs.
 *
-* thought processe should be as concise as possible like the examples. 1 sentence max
+* thought process should be as concise as possible like the examples. 1 sentence max
 `;
 
 module.exports = { systemMessage };

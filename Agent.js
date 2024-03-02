@@ -53,10 +53,8 @@ class Agent {
       waitUntil: "domcontentloaded",
       timeout: TIMEOUT,
     });
-    await Promise.race([
-      this.waitForEvent(this.page, "load"),
-      this.sleep(TIMEOUT),
-    ]);
+    
+    await this.sleep(TIMEOUT);
   }
 
   // Take screenshot of labeled page
@@ -89,7 +87,10 @@ class Agent {
       max_tokens: 1024,
       messages: this.memory,
     });
+
     const responseObj = response.choices[0].message.content;
+
+    console.log(responseObj);
 
     this.memory.push({
       role: "assistant",
@@ -125,7 +126,7 @@ class Agent {
   }
 
   async type(labelNumber, text) {
-    await click(labelNumber);
+    await this.click(labelNumber);
     await this.page.keyboard.type(text);
   }
 
@@ -280,4 +281,4 @@ class Agent {
     }, event);
   }
 }
-module.exports = Jarvis;
+module.exports = Agent;

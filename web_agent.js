@@ -11,9 +11,12 @@ async function run() {
   while (true) {
     const userInput = await input("You: ");
 
+    console.log("storing message");
     await jarvis.storeMessageToMemory(userInput);
 
     while (!isAnswerFound) {
+      console.log("starting eval");
+
       const { thoughtProcess, nextAction } = await jarvis.startEvaluation();
       console.log("🤖 Jarvis: " + thoughtProcess);
 
