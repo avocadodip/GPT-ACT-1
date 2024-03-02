@@ -12,6 +12,8 @@
 
 4. Run `node web_agent.js`
 
+![snapshot](https://github.com/avocadodip/GPT-ACT-1/assets/56790819/4b9cec77-3e73-42fc-82f2-95da55c6328b)
+
 ### open-source SOTA
 - Windows OS UI controller (https://github.com/microsoft/UFO - Feb 24, 2024)
 - Set of Mark (SOM) prompting (https://arxiv.org/abs/2310.11441 - Oct 17, 2023)
