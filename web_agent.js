@@ -30,7 +30,7 @@ async function run() {
           await jarvis.type(nextAction.element, nextAction.text);
           break;
         case "request-info":
-          console.log("✋ Hol' up. Im gonna need some clarification from you.");
+          console.log(`✋ Hol' up. Need some clarification: ${nextAction.prompt}`);
           const userInput = await input("You: ");
           await jarvis.storeMessageToMemory(userInput);
           break;
