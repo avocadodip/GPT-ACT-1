@@ -12,7 +12,8 @@
 
 4. Run `node web_agent.js`
 
-### open-source SOTA
+## open-source SOTA
+======
 - Windows OS UI controller (https://github.com/microsoft/UFO - Feb 24, 2024)
 - Set of Mark (SOM) prompting (https://arxiv.org/abs/2310.11441 - Oct 17, 2023)
 
