@@ -12,11 +12,7 @@
 
 4. Run `node web_agent.js`
 
-Forked off:
-- https://github.com/vdutts7/gpt4V-scraper
-- https://github.com/ddupont808/GPT-4V-Act
-
-For reference:
+Cool stuffs:
 - Windows OS UI controller (https://github.com/microsoft/UFO - Feb 24, 2024)
 - Set of Mark (SOM) prompting technique (https://arxiv.org/abs/2310.11441 - Oct 17, 2023)
 
