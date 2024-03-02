@@ -1,7 +1,7 @@
 
 # GPT ACT-1
 
-1. Run `npm i` to install dependencies (Puppetteer libraries, see `package.json` for details).
+1. Run `npm i` to install dependencies (Puppeteer libraries, see `package.json` for details).
 
 2. Copy `.env.template` and rename this new file `.env` . Then add your `OPENAI_API_KEY` and save the file. Run `source .env` properly mount this into the environment.
 
