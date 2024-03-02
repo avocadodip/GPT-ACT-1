@@ -1,12 +1,12 @@
 {
-    "name": "gpt4V-scraper",
+    "name": "GPT-ACT-1",
     "version": "1.0.0",
     "description": "",
     "main": "snapshot.js",
     "scripts": {
         "test": "echo \"oopsie poopsie someone had a bloopsie\" && exit 1"
     },
-    "author": "vdutts7",
+    "author": "avocadodip",
     "license": "ISC",
     "dependencies": {
         "@ngrok/ngrok": "^1.1.0",
