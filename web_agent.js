@@ -3,7 +3,7 @@ const readline = require("readline");
 const puppeteer = require("puppeteer-extra");
 const StealthPlugin = require("puppeteer-extra-plugin-stealth");
 const OpenAI = require("openai");
-const { sendSms } = require("./util/smsUtils");
+// const { sendSms } = require("./util/smsUtils");
 const { systemMessage } = require("./util/systemMessage");
 const {
   image_to_base64,

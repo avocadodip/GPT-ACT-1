@@ -6,10 +6,10 @@ type RequestInfoFromUser = { action: "request-info", prompt: string }
 type RememberInfoFromSite = { action: "remember-info", info: string }
 type VisitURL = { action: "visit-url", url: string }
 type MarkTaskComplete = { action: "mark-task-complete" }
-type QuitTask = { action: "quit-task" }
+type GiveUp = { action: "give-up" }
 type DismissDialogs = { action: "dismiss-dialogs", element: number } 
-type NavigateBack = { action: "navigate-back" }
-type NavigateForward = { action: "navigate-forward" }
+type NavigateBack = { action: "navigate-back", url: string }
+type NavigateForward = { action: "navigate-forward", url: string }
 
 ## response format
 {
@@ -36,7 +36,7 @@ type NavigateForward = { action: "navigate-forward" }
 }
 {
   "briefExplanation": "I've made a few different attempts at logging in, but can't find a way to"
-  "nextAction": { "action": "quit-task" }
+  "nextAction": { "action": "give-up" }
 }
 
 ## instructions
@@ -45,7 +45,7 @@ type NavigateForward = { action: "navigate-forward" }
 
 # your output must always be in valid JSON format.
 # for conducting searches, use a Google search format like 'https://google.com/search?q=search' whenever suitable.
-*
+* refrain from fabricating any URLs.
 `;
 
 module.exports = { systemMessage };
