@@ -3,20 +3,18 @@ const Agent = require("./Agent");
 const { input } = require("./util/util");
 
 async function run() {
-  const openai = new OpenAI();
+  const openai = new OpenAI({
+    apiKey: "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"
+  });
   const jarvis = new Agent(openai);
   await jarvis.init(); // Initialize Puppeteer and open a new page
   let isAnswerFound = false;
 
   while (true) {
     const userInput = await input("You: ");
-
-    console.log("storing message");
     await jarvis.storeMessageToMemory(userInput);
 
     while (!isAnswerFound) {
-      console.log("starting eval");
-
       const { thoughtProcess, nextAction } = await jarvis.startEvaluation();
       console.log("🤖 Jarvis: " + thoughtProcess);
 
@@ -39,7 +37,7 @@ async function run() {
           break;
         case "remember-info":
           break;
-        case "mark-task-complete":
+        case "done":
           console.log("✅ Yippeee I finished this task");
           isAnswerFound = true;
           break;

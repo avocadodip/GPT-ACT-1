@@ -5,7 +5,9 @@ const { systemMessage } = require("./util/systemMessage.js");
 const { image_to_base64 } = require("./util/util.js");
 const { default: OpenAI } = require("openai");
 puppeteer.use(StealthPlugin());
-const openai = new OpenAI();
+const openai = new OpenAI({
+  apiKey: "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",
+});
 
 const TIMEOUT = 6000;
 
@@ -53,7 +55,7 @@ class Agent {
       waitUntil: "domcontentloaded",
       timeout: TIMEOUT,
     });
-    
+
     await this.sleep(TIMEOUT);
   }
 
@@ -86,18 +88,31 @@ class Agent {
       model: "gpt-4-vision-preview",
       max_tokens: 1024,
       messages: this.memory,
+      temperature: 0.01,
     });
 
+    console.log("0");
     const responseObj = response.choices[0].message.content;
 
-    console.log(responseObj);
+    // Remove ```json wrapping. Sometimes gpt responds with markdown even when prompted now to
+    function unwrapJsonString(jsonStr) {
+      const regexPattern = /^\s*```json\s*|\s*```\s*$/g; // Pattern
+      return jsonStr.replace(regexPattern, ""); // Remove
+    }
+
+    // Unwrap the JSON string if necessary
+    const cleanedResponseObj = unwrapJsonString(responseObj);
+
+    console.log("1");
+    console.log(cleanedResponseObj);
+
 
     this.memory.push({
       role: "assistant",
-      content: responseObj,
+      content: cleanedResponseObj,
     });
 
-    const data = JSON.parse(responseObj);
+    const data = JSON.parse(cleanedResponseObj);
     const thoughtProcess = data.thoughtProcess;
     const nextAction = data.nextAction;
 

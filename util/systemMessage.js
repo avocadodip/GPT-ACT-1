@@ -5,7 +5,7 @@ type TypeAction = { action: "type", element: number, text: string }
 type ScrollAction = { action: "scroll", direction: "up" | "down" }
 type RequestInfoFromUser = { action: "request-info", prompt: string }
 type RememberInfoFromSite = { action: "remember-info", info: string }
-type MarkTaskComplete = { action: "mark-task-complete" }
+type Done = { action: "done" }
 type GiveUp = { action: "give-up" }
 type DismissDialogs = { action: "dismiss-dialogs", element: number } 
 type NavigateBack = { action: "navigate-back", url: string }
@@ -45,7 +45,7 @@ type NavigateForward = { action: "navigate-forward", url: string }
 # observe the screenshot, and think about the next action
 # *****For now, refrain from using SCROLL, REMEMBER INFO FROM SITE, DISMISS DIALOGS, and NAVIGATE BACK / NAVIGATE FORWARD since they're unfinished
 
-# your output must always be in valid JSON format. Do NOT respond in markdown
+# your output must always be in valid JSON format.
 *
 # for conducting searches, use a Google search format like 'https://google.com/search?q=search' whenever suitable.
 *
